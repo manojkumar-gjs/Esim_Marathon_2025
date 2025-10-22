@@ -1,27 +1,61 @@
+# 🧮 4-Bit Asynchronous Counter Using JK Flip-Flops
 
-# 4-Bit Asynchronous Counter Using JK Flip-Flops
-## Abstract
-## Reference Circuit Details
-## Simulation in eSim with IHP PDK
-### Netlist
-### Waveform
-## Conclusion
-## Acknowledgement
-## References
+---
 
-Abstract
+## 📑 Table of Contents
+1. [Abstract](#-abstract)
+2. [Reference Circuit Details](#-reference-circuit-details)
+3. [Reference Circuit Waveform](#-reference-circuit-waveform)
+4. [Simulation in eSim with IHP PDK](#-simulation-in-esim-with-ihp-pdk)
+    - [Schematic](#-schematic)
+    - [Transient Settings](#-transient-settings)
+    - [Netlist](#-netlist)
+5. [Simulation with NGSpice](#-simulation-with-ngspice)
+6. [Waveform](#-waveform)
+7. [Conclusion](#-conclusion)
+8. [Acknowledgement](#-acknowledgement)
+9. [References](#-references)
 
-This project presents the design and implementation of a 4-bit asynchronous counter using JK flip-flops. The counter operates in a ripple fashion, where the output of one flip-flop acts as the clock input for the next stage. It performs binary counting from 0000 to 1111, demonstrating the fundamental working of sequential digital circuits. The design highlights the principles of frequency division and propagation delay that occur in asynchronous systems. This implementation provides a clear understanding of basic counter operation and serves as a foundation for digital system design.
+---
 
-Reference Circuit Details
+## 📘 Abstract
+This project presents the design and implementation of a **4-bit asynchronous counter** using **JK flip-flops**.  
+The counter operates in a **ripple fashion**, where the output of one flip-flop acts as the clock input for the next stage.  
+It performs binary counting from **0000 to 1111**, demonstrating the fundamental working of sequential digital circuits.  
 
-I. Circuit Details
+The design highlights:
+- Frequency division  
+- Propagation delay in asynchronous systems  
+- Sequential logic design principles  
 
-The 4-bit asynchronous counter is built using JK flip-flops configured to toggle mode by connecting both J and K inputs to logic HIGH. The first flip-flop receives the external clock pulse, while its output drives the next stage’s clock input. As a result, each successive flip-flop toggles at half the frequency of the preceding one, generating a binary sequence from 0000 to 1111.
-This ripple configuration effectively divides the input clock frequency and finds applications in event counting, frequency division, and sequential logic circuits.
-Although simple, the asynchronous nature introduces small propagation delays between stages.
+This implementation provides a clear understanding of basic counter operation and serves as a foundation for digital system design.
 
-Reference Circuit Waveform
+---
+
+## ⚙️ Reference Circuit Details
+
+### I. Circuit Description
+The 4-bit asynchronous counter is built using **JK flip-flops** configured in **toggle mode** by connecting both J and K inputs to logic HIGH.  
+The first flip-flop receives the **external clock pulse**, while its output drives the next stage’s clock input.  
+
+As a result:
+- Each successive flip-flop toggles at half the frequency of the previous one.  
+- The circuit generates a binary sequence from **0000 → 1111**.  
+- This configuration divides the clock frequency by 2 for each stage.  
+
+**Applications:**  
+Event counting, frequency division, and timing-based sequential systems.  
+**Limitation:**  
+Small propagation delays exist due to asynchronous operation.
+
+---
+
+## 📊 Reference Circuit Waveform
+*(Attach your simulation waveform image here)*  
+
+Example:
+```markdown
+![4-bit Counter Waveform](waveform.png)
 
 Simulation in eSim with IHP PDK
 

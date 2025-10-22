@@ -33,6 +33,7 @@ This implementation provides a clear understanding of basic counter operation an
 ---
 
 ## ⚙️ Reference Circuit Details
+<img width="1295" height="506" alt="Screenshot from 2025-10-22 18-53-18" src="https://github.com/user-attachments/assets/6532786a-926d-49d3-a4df-a8e6b1c1a0dc" />
 
 ### I. Circuit Description
 The 4-bit asynchronous counter is built using **JK flip-flops** configured in **toggle mode** by connecting both J and K inputs to logic HIGH.  
@@ -51,20 +52,21 @@ Small propagation delays exist due to asynchronous operation.
 ---
 
 ## 📊 Reference Circuit Waveform
-*(Attach your simulation waveform image here)*  
+<img width="1249" height="537" alt="Screenshot from 2025-10-22 18-53-35" src="https://github.com/user-attachments/assets/a387ad7c-28af-42cc-acc8-4546a8e5c917" />
 
-Example:
-```markdown
-![4-bit Counter Waveform](waveform.png)
-
-Simulation in eSim with IHP PDK
+## Simulation in eSim with IHP PDK
 
 Schematic
+<img width="1720" height="606" alt="Screenshot from 2025-10-22 17-36-35" src="https://github.com/user-attachments/assets/8a6cfaa3-51be-43da-9a3a-f50fd91f7fe4" />
 
 Transient Settings
 
-Netlist
+<img width="1366" height="654" alt="Screenshot from 2025-10-22 17-53-03" src="https://github.com/user-attachments/assets/c1bb30ad-85d8-4818-a612-08b0473d67bb" />
+<img width="1366" height="654" alt="Screenshot from 2025-10-22 17-53-13" src="https://github.com/user-attachments/assets/001a9e7d-cb0b-490b-a6d0-a6085c738223" />
 
+
+Netlist
+```markdown
 .title kicad schematic
 
 * u6 net-_u2-pad1_ net-_u2-pad1_ q1 unconnected-_u6-pad4_ net-_u2-pad1_ q2 unconnected-_u6-pad7_ d_jkff
@@ -100,19 +102,21 @@ plot v(in)
 .endc
 .end
 
+```
 
-Simulation with NGSpice
+---
+## Simulation with NGSpice
 
-Open a new terminal and execute the following commands:
-
+### Open a new terminal and execute the following commands:
+```markdown
 cd ~/ihp/IHP-Open-PDK
 ls
 mkdir jk_counter
 cd jk_counter
 gedit jk_counter.cir
-
-Paste the below code into jk_counter.cir:
-
+```
+### Paste the below code into jk_counter.cir:
+```markdown
 * jk_counter.cir
 * 4-bit counter waveform (time-driven behavioral signals)
 * Fully separated (non-overlapping) waveform view
@@ -145,26 +149,34 @@ plot v(clk)+30 v(q0)+22 v(q1)+14 v(q2)+6 v(q3)
 .endc
 
 .end
-
-Run the simulation:
-
+```
+### Run the simulation:
+```markdown
 ngspice jk_counter.cir
+```
+### In terminal:
+<img width="527" height="506" alt="Screenshot from 2025-10-22 17-29-19" src="https://github.com/user-attachments/assets/81fdcc85-9ced-4f51-9f22-2c858d36f0c9" />
 
-Waveform
+---
+## Waveform
 
-Conclusion
+<img width="600" height="547" alt="Screenshot from 2025-10-22 17-26-56" src="https://github.com/user-attachments/assets/5f28d8e3-6e3e-4371-afa6-ae56517631ac" />
+
+---
+## Conclusion
 
 The simulation of the 4-bit asynchronous JK counter was successfully executed in both eSim and NGSpice environments. The output waveform clearly demonstrates binary counting from 0000 to 1111, validating the correct operation of the counter. The results confirm that the circuit behaves as expected, effectively dividing the clock frequency across each stage.
 
-
-Acknowledgement
+---
+## Acknowledgement
 
 The successful completion of this project was made possible through the use of eSim, NGSpice, and the IHP Open PDK. Sincere thanks to the open-source EDA community for providing accessible simulation tools that facilitated circuit design, analysis, and waveform visualization.
 
+---
+## References
 
-References
-
-1. S. H. Sutar, “A Novel Approach To Asynchronous State Machine Modeling on Multisim To Avoid Function Hazards,” ResearchGate, 2014. Link
+1. [S. H. Sutar, “A Novel Approach To Asynchronous State Machine Modeling on Multisim To Avoid Function Hazards,” ResearchGate, 2014.](https://www.researchgate.net/publication/269709920_A_Novel_Approach_To_Asynchronous_State_Machine_Modeling_On_Multisim_For_Avoiding_Function_Hazards)
 
 
-2. “Digital Circuits,” All About Circuits. Available at: https://www.allaboutcircuits.com/assets/pdf/digital.pdf
+2. [“Digital Circuits,” All About Circuits.](https://www.allaboutcircuits.com/assets/pdf/digital.pdf)
+--- 

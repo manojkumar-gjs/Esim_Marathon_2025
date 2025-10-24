@@ -16,7 +16,7 @@
 8. [Conclusion](#-conclusion)
 9. [Acknowledgement](#-acknowledgement)
 10. [References](#-references)
-
+11. [Project Report](#-project-report)
 ---
 
 ## 📘 Abstract
@@ -259,3 +259,6 @@ The successful completion of this project was made possible through the use of e
 
 2. [“Digital Circuits,” All About Circuits.](https://www.allaboutcircuits.com/assets/pdf/digital.pdf)
 --- 
+## Project Report
+[eSimReport.pdf](https://github.com/user-attachments/files/23128321/eSimReport.pdf)
+

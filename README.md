@@ -17,6 +17,7 @@
 9. [Acknowledgement](#-acknowledgement)
 10. [References](#-references)
 11. [Project Report](#-project-report)
+12. [ZIP File](#-zip-file-esim-project)
 ---
 
 ## 📘 Abstract
@@ -262,3 +263,9 @@ The successful completion of this project was made possible through the use of e
 ## Project Report
 [eSimReport.pdf](https://github.com/user-attachments/files/23128321/eSimReport.pdf)
 
+---
+## ZIP File
+This zip file includes the circuit schematic, netlist, project report 
+[eSimProject.zip](https://github.com/user-attachments/files/23128732/eSimProject.zip)
+
+---

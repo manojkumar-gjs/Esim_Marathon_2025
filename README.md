@@ -6,15 +6,16 @@
 1. [Abstract](#-abstract)
 2. [Reference Circuit Details](#-reference-circuit-details)
 3. [Reference Circuit Waveform](#-reference-circuit-waveform)
-4. [Simulation in eSim with IHP PDK](#-simulation-in-esim-with-ihp-pdk)
+4. [Installation ](#-installation)
+5. [Simulation in eSim with IHP PDK](#-simulation-in-esim-with-ihp-pdk)
     - [Schematic](#-schematic)
     - [Transient Settings](#-transient-settings)
     - [Netlist](#-netlist)
-5. [Simulation with NGSpice](#-simulation-with-ngspice)
-6. [Waveform](#-waveform)
-7. [Conclusion](#-conclusion)
-8. [Acknowledgement](#-acknowledgement)
-9. [References](#-references)
+6. [Simulation with NGSpice](#-simulation-with-ngspice)
+7. [Waveform](#-waveform)
+8. [Conclusion](#-conclusion)
+9. [Acknowledgement](#-acknowledgement)
+10. [References](#-references)
 
 ---
 
@@ -53,6 +54,84 @@ Small propagation delays exist due to asynchronous operation.
 
 ## 📊 Reference Circuit Waveform
 <img width="1249" height="537" alt="Screenshot from 2025-10-22 18-53-35" src="https://github.com/user-attachments/assets/a387ad7c-28af-42cc-acc8-4546a8e5c917" />
+
+---
+
+## Installation 
+
+### SETUP OPENVAF
+1. Open Google Chrome and paste the below code and download the file
+
+```markdown
+openvaf_23_5_0_linux_amd64.tar.gz
+
+```
+2. For extracting   path
+```markdown
+tar xvf openvaf_23_5_0_linux_amd64.tar.gz
+sudo cp openvaf /bin/
+```
+3. For verifying
+```markdown
+openvaf –-version
+```
+## Installation of IHP-PDK 
+1. Make a directory 
+```markdown
+mkdir  ihp
+cd  ihp
+```
+2. Clone it.
+
+```markdown
+git clone --recursive https://github.com/IHP-GmbH/IHP-Open-PDK.git
+cd IHP-Open-PDK
+git checkout dev
+```
+3. configure it.
+```markdown
+echo "export PDK_ROOT=\$HOME/your_directory/IHP-Open-PDK" >> ~/.bashrc
+echo "export PDK=ihp-sg13g2" >> ~/.bashrc
+echo "export KLAYOUT_PATH=\"\$HOME/.klayout:\$PDK_ROOT/\$PDK/libs.tech/klayout\"" >> ~/.bashrc
+echo "export KLAYOUT_HOME=\$HOME/.klayout" >> ~/.bashrc
+source ~/.bashrc
+```
+## AUTOCONF 2.70
+
+1. Setup Autoconf 2.70.
+```markdown
+curl -O http://ftp.gnu.org/gnu/autoconf/autoconf-2.70.tar.gz
+```
+2. For Extracting
+```markdown
+tar -xzf autoconf-2.70.tar.gz
+cd autoconf-2.70
+```
+3. Configure  It
+```markdown
+./configure --prefix=/usr/local
+make
+sudo make install
+```
+4. For Verifying
+```markdown
+autoconf --version
+```
+---
+## NGSPICE
+
+1. Clone it.
+ ```markdown
+git clone https://git.code.sf.net/p/ngspice/ngspice ngspice-ngspice
+cd ngspice-ngspice
+./autogen.sh
+```
+3. Configure it.
+```markdown
+./configure --enable-osdi
+make
+sudo make install
+```
 
 ## Simulation in eSim with IHP PDK
 
